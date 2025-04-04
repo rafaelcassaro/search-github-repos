@@ -1,6 +1,6 @@
 'use client'
 
-import { usePathname, useSearchParams, } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { HiArrowsUpDown } from "react-icons/hi2";
 
 
