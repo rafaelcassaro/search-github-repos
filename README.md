@@ -1,7 +1,7 @@
 ## GITHUB REPOSITORIES SEARCH
-Busca repositórios de um usuário no github. O projeto foi feito com shallow routing com use params, pois a api do github quantidade limitada a requisições.
+Busca repositórios de um usuário no github. O projeto foi feito com shallow routing e com use params, pois a api do github possui uma quantidade limitada a requisições.
 
-Search for a user's repositories on GitHub. The project was made with shallow routing with use params, since the GitHub API has a limited number of requests.
+Searches for a user's repositories on GitHub. The project was made with shallow routing and use params, since the GitHub API has a limited number of requests.
 
 
 ## ----------------------------------------------
