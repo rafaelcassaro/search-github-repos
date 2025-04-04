@@ -2,7 +2,7 @@
 
 import { use } from "react";
 import Pagination from "./pagination";
-import { useSearchParams, } from "next/navigation";
+import { useSearchParams} from "next/navigation";
 import { changeTable, sortRepositories } from "../lib/utils";
 import { reposApi } from "../lib/api";
 import { FaFolder, FaStar } from "react-icons/fa";
