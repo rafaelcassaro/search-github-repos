@@ -6,9 +6,7 @@ export const generatePagination = ( totalPages: number) => {
 
 
 export function changeTable(perPage: number, allRepositories: reposApi[], currentPage: number) {
-    if (!allRepositories?.length) {
-        return 0;
-    }
+    
     const indexOfLastRepo = currentPage * perPage;
     const indexOfFirstRepo = indexOfLastRepo - perPage;
     return allRepositories.slice(indexOfFirstRepo, indexOfLastRepo);

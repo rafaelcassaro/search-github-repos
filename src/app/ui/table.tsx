@@ -13,14 +13,14 @@ export default function Table({ repositoriesData }:
     { repositoriesData: Promise<reposApi[] | null> }) {
 
     const allRepositoriesApi = use(repositoriesData);
-
+    const searchParams = useSearchParams();
     if (!Array.isArray(allRepositoriesApi) || allRepositoriesApi.length === 0) {
         return (
             <div>Nenhum usuário encontrado.</div>
         )
     }
 
-    const searchParams = useSearchParams();
+    
     const urlSearchParams = new URLSearchParams(searchParams.toString());
 
     const perPage = 10;
@@ -30,7 +30,7 @@ export default function Table({ repositoriesData }:
     const orderParam = urlSearchParams.get('order');
     const searchParam = urlSearchParams.get('search');
 
-    let tableRepositories: any = allRepositoriesApi;
+    let tableRepositories = allRepositoriesApi;
     let reposLength = 0;
 
     if (searchParam !== null) {
