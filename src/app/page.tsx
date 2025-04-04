@@ -21,8 +21,10 @@ export default async function Home(props: { searchParams?: Promise<{ user?: stri
         </div>
         <hr className="bg-weakblack p-1px my-7 mx-auto" />
       </div>
-      <div className="flex justify-between ">
-        <SortBy />
+      <div className="block sm:flex justify-between ">
+        <div>
+          <SortBy />
+        </div>
         <FilterReposInput />
       </div>
 
