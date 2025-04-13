@@ -17,19 +17,19 @@ export default async function Home(props: { searchParams?: Promise<{ user?: stri
       <div className="">
         <h1 className=" block text-3xl font-bold">Pesquise um usuario do github</h1>
         <div className="my-6 ">
-          <SearchUser />
+          <SearchUser  />
         </div>
         <hr className="bg-weakblack p-1px my-7 mx-auto" />
       </div>
-      <div className="block sm:flex justify-between ">
+      <div className="block sm:flex my-3 justify-between ">
         <div>
-          <SortBy />
+          <SortBy key={user}/>
         </div>
-        <FilterReposInput />
+        <FilterReposInput key={user}/>
       </div>
 
       <Suspense fallback={<Loading />}>
-        <Table repositoriesData={repositoriesData} />
+        <Table repositoriesData={repositoriesData} user={user}/>
       </Suspense>
     </main>
   );

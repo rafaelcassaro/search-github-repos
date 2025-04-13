@@ -9,14 +9,14 @@ import { FaFolder, FaStar } from "react-icons/fa";
 import { FaCodeFork } from "react-icons/fa6";
 
 
-export default function Table({ repositoriesData }:
-    { repositoriesData: Promise<reposApi[] | null> }) {
+export default function Table({ repositoriesData , user }:
+    { repositoriesData: Promise<reposApi[] | null> , user: string}) {
 
     const allRepositoriesApi = use(repositoriesData);
     const searchParams = useSearchParams();
     if (!Array.isArray(allRepositoriesApi) || allRepositoriesApi.length === 0) {
         return (
-            <div>Nenhum usuário encontrado.</div>
+            <div>Nenhum usuário com o nome {user} encontrado.</div>
         )
     }
 
@@ -30,7 +30,7 @@ export default function Table({ repositoriesData }:
     const orderParam = urlSearchParams.get('order');
     const searchParam = urlSearchParams.get('search');
 
-    let tableRepositories = allRepositoriesApi;
+    let tableRepositories = [...allRepositoriesApi];
     let reposLength = 0;
 
     if (searchParam !== null) {
@@ -55,7 +55,7 @@ export default function Table({ repositoriesData }:
                                 <tr key={repos.name} className="border border-solid border-github-border justify-items-center">
                                     <td className="p-2 ">
                                         <div className="gap-2 flex self-center">
-                                            <FaFolder  className=""/>
+                                            <FaFolder  className="hidden"/>
                                             <div>{repos.name}</div>
                                         </div>
                                     </td>
@@ -75,7 +75,7 @@ export default function Table({ repositoriesData }:
                             ))
                         ) : (
                             <tr>
-                                <td>Nenhum repositório encontrado.</td>
+                                <td>Nenhum repositório com o nome {searchParam} encontrado.</td>
                             </tr>
                         )}
                     </tbody>

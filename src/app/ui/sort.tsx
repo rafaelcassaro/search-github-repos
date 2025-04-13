@@ -48,7 +48,6 @@ export default function SortBy() {
                         className="peer block w-full cursor-pointer text-lg p-1 border-github-border bg-github-border border-solid border rounded-2xl px-4 py-2 placeholder-github-grey"
                         defaultValue=""
                         onChange={handleChange}
-                        aria-describedby="customer-error"
                     >
                         <option value="" disabled>
                             Selecione

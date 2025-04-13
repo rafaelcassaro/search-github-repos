@@ -16,7 +16,7 @@ export default function SearchUser() {
         params.delete('sortBy');
         params.delete('search');
         if (e) {
-            params.set('user', e);
+            params.set('user', e.toLowerCase());
         } else {
             params.delete('user');
         }

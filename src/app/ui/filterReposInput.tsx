@@ -9,7 +9,7 @@ export default function FilterReposInput() {
 
     const handleInput = useDebouncedCallback((e: string) => {
         const params = new URLSearchParams(searchParams);
-        params.set('search', e);
+        params.set('search', e.toLowerCase());
         params.set('page', '1');
         window.history.pushState(null, '', `?${params.toString()}`);
     }, 300);
